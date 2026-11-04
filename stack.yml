@@ -1,0 +1,35 @@
+name: strapi
+icon: strapi
+title: Strapi
+
+services:
+- name: strapi
+  title: Node.js
+  service: strapi
+  required: true
+  volumes:
+  - name: uploads
+    size: 10
+  links:
+  - name: db
+    service: postgres
+  - name: sendmail
+    service: mailpit
+
+- name: postgres
+  title: PostgreSQL
+  required: true
+  service: postgres
+  volumes:
+  - name: data
+    size: 10
+
+- name: mailpit
+  disabled: true
+  title: Mailpit
+  service: mailpit
+
+- name: opensmtpd
+  disabled: true
+  title: OpenSMTPD
+  service: opensmtpd
