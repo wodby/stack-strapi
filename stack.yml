@@ -1,6 +1,7 @@
 name: strapi
 icon: strapi
 title: Strapi
+docs: https://wodby.com/docs/2.0/stacks/catalog/strapi/
 
 services:
 - name: strapi
